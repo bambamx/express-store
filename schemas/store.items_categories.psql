@@ -1,0 +1,17 @@
+-- Table: store.item_categories
+
+-- DROP TABLE store.item_categories;
+
+CREATE TABLE store.item_categories
+(
+    item_id integer NOT NULL DEFAULT nextval('store.item_categories_item_id_seq'::regclass),
+    category_id integer NOT NULL DEFAULT nextval('store.item_categories_category_id_seq'::regclass),
+    id integer NOT NULL DEFAULT nextval('store.item_categories_id_seq'::regclass)
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+
+ALTER TABLE store.item_categories
+    OWNER to admin_store;

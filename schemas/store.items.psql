@@ -1,0 +1,24 @@
+-- Table: store.items
+
+-- DROP TABLE store.items;
+
+CREATE TABLE store.items
+(
+    id integer NOT NULL DEFAULT nextval('store.items_id_seq'::regclass),
+    name text COLLATE pg_catalog."default",
+    description text COLLATE pg_catalog."default",
+    price numeric,
+    creation_date date,
+    modified_date date,
+    quantity numeric,
+    CONSTRAINT items_pkey PRIMARY KEY (id)
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+
+ALTER TABLE store.items
+    OWNER to admin_store;
+COMMENT ON TABLE store.items
+    IS 'Items table';
